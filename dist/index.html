@@ -1,33 +1,63 @@
-<!DOCTYPE html><html><head>
-    <meta charset="utf-8">
-    <title>Yew App</title>
-  
-<link rel="preload" href="/index-fb4bc527fefe3841_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/index-fb4bc527fefe3841.js"></head>
-<body><script type="module">import init from '/index-fb4bc527fefe3841.js';init('/index-fb4bc527fefe3841_bg.wasm');</script><script>(function () {
-    var url = 'ws://' + window.location.host + '/_trunk/ws';
-    var poll_interval = 5000;
-    var reload_upon_connect = () => {
-        window.setTimeout(
-            () => {
-                // when we successfully reconnect, we'll force a
-                // reload (since we presumably lost connection to
-                // trunk due to it being killed, so it will have
-                // rebuilt on restart)
-                var ws = new WebSocket(url);
-                ws.onopen = () => window.location.reload();
-                ws.onclose = reload_upon_connect;
-            },
-            poll_interval);
-    };
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Jovi</title>
+    <meta name="Description" content="Jovi" />
+    <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/icon-128.png"
+      sizes="128x128"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/icon-192.png"
+      sizes="192x192"
+    />
 
-    var ws = new WebSocket(url);
-    ws.onmessage = (ev) => {
-        const msg = JSON.parse(ev.data);
-        if (msg.reload) {
-            window.location.reload();
-        }
-    };
-    ws.onclose = reload_upon_connect;
-})()
-</script></body></html>
+    <link rel="shortcut icon" href="icons/icon-196.png" sizes="196x196" />
+
+    <link rel="apple-touch-icon" href="icons/icon-152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="icons/icon-167.png" sizes="167x167" />
+    <link rel="apple-touch-icon" href="icons/icon-180.png" sizes="180x180" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
+
+    <link
+      rel="preload"
+      href="/index-fb4bc527fefe3841_bg.wasm"
+      as="fetch"
+      type="application/wasm"
+      crossorigin=""
+    />
+    <link rel="modulepreload" href="/index-fb4bc527fefe3841.js" />
+  </head>
+  <body>
+    <script src="start_service_worker.js"></script>
+    <noscript
+      ><h2>This web app cannot work without javascript enabled</h2></noscript
+    >
+
+    <div id="div_content">
+      <h1>Hello PWA world!</h1>
+      <p>Install me.</p>
+    </div>
+
+    <script type="module">
+      import init from "/index-fb4bc527fefe3841.js";
+      init("/index-fb4bc527fefe3841_bg.wasm");
+    </script>
+  </body>
+</html>

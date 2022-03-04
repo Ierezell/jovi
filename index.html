@@ -1,7 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Yew App</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Jovi</title>
+    <meta name="Description" content="Jovi" />
+    <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
+    <!-- <link rel="manifest" href="manifest.json" /> -->
+
+    <link data-trunk rel="copy-dir" href="assets/icons/" />
+    <link data-trunk rel="copy-file" href="manifest.json" />
+    <link data-trunk rel="copy-file" href="service_worker.js" />
+    <link data-trunk rel="copy-file" href="start_service_worker.js" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/icon-128.png"
+      sizes="128x128"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="icons/icon-192.png"
+      sizes="192x192"
+    />
+
+    <link rel="shortcut icon" href="icons/icon-196.png" sizes="196x196" />
+
+    <link rel="apple-touch-icon" href="icons/icon-152.png" sizes="152x152" />
+    <link rel="apple-touch-icon" href="icons/icon-167.png" sizes="167x167" />
+    <link rel="apple-touch-icon" href="icons/icon-180.png" sizes="180x180" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
   </head>
+  <body>
+    <!-- <script src="start_service_worker.js"></script> -->
+    <!-- <noscript><h2> This web app cannot work without javascript enabled</h2></noscript> -->
+
+    <div id="div_content">
+      <h1>Hello PWA world!</h1>
+      <p>Install me.</p>
+    </div>
+  </body>
 </html>
