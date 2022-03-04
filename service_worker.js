@@ -21,6 +21,8 @@ self.addEventListener('install', event =>
             return cache.addAll(
                 [
                     'index.html',
+                    'index_bg.wasm',
+                    'index.js',
                 ]
             );
         })

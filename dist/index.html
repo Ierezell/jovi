@@ -6,6 +6,7 @@
     <meta name="Description" content="Jovi" />
     <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
     <link rel="manifest" href="manifest.json" />
+
     <link
       rel="icon"
       type="image/png"
@@ -37,12 +38,12 @@
 
     <link
       rel="preload"
-      href="/index-fb4bc527fefe3841_bg.wasm"
+      href="/index_bg.wasm"
       as="fetch"
       type="application/wasm"
       crossorigin=""
     />
-    <link rel="modulepreload" href="/index-fb4bc527fefe3841.js" />
+    <link rel="modulepreload" href="/index.js" />
   </head>
   <body>
     <script src="start_service_worker.js"></script>
@@ -56,8 +57,8 @@
     </div>
 
     <script type="module">
-      import init from "/index-fb4bc527fefe3841.js";
-      init("/index-fb4bc527fefe3841_bg.wasm");
+      import init from "/index.js";
+      init("/index_bg.wasm");
     </script>
   </body>
 </html>
